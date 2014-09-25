@@ -1,0 +1,12 @@
+<div class="page-flip-container" onclick="this.classList.toggle('hover');">
+  <div class="flipper">
+    <div class="front">
+      <% pagenumber=page ; %>
+        <% include _page_content %>
+    </div>
+    <div class="back">
+      <% pagenumber=(page-1); %>
+        <% include _page_content %>
+    </div>
+  </div>
+</div>

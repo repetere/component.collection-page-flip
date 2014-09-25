@@ -8,7 +8,7 @@
 'use strict';
 
 var should = require('chai').should();
-var component_navigation_header = require('../lib/component.navigation-header');
+// var component_page_flip = require('../lib/component.collection-page-flip');
 
 describe('component.navigation-header', function () {
 	describe('#indexOf()', function () {

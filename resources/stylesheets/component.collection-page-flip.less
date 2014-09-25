@@ -1,0 +1,112 @@
+/* entire container, keeps perspective */
+.page-flip-book-container{
+	width: 100%;
+	height: 100%;	
+	position: relative;
+	.page-flip-container {
+		perspective: 1000;
+		width: 100%;
+		height: 100%;	
+		position: absolute;
+		background: white;
+		top:0;
+		left:0;	
+		display: block;
+
+		.flipper{	
+			transition: all 0.8s ease-in-out;
+			transform-style: preserve-3d;
+			position: relative;
+			height:100%;
+			width:100%;
+
+			/* hide back of pane during swap */
+			.front, 
+			.back {
+				backface-visibility: hidden;
+				position: absolute;
+				top: 0;
+				left: 0;
+				height:100%;
+				width:100%;
+				overflow: hidden;
+				overflow-y:auto;
+				background:#fff;
+			}
+
+			/* front pane, placed above back */
+			.front {
+				z-index: 2;
+				/* for firefox 31 */
+				transform: rotateY(0deg);
+				// border: 1px solid #333;
+				// color:white;
+			}	
+
+			/* back, initially hidden pane */
+			.back {
+				transform: rotateY(180deg);
+				// color:white;
+			}
+
+		}
+
+		/* flip the pane when hovered */
+		&.flip ,
+		// &:hover,
+		&.hover{
+			.flipper{
+				transform: rotateY(180deg);
+			}
+		}
+	}
+}
+
+	// /* flip the pane when hovered */
+	// .flip-container:hover .flipper, .flip-container.hover .flipper {
+	// 	transform: rotateY(180deg);
+	// }
+
+// .flip-container, .front, .back {
+// 	width: 100%;
+// 	height: 100%;
+// }
+
+/* flip speed goes here */
+// .flipper {
+// 	transition: 0.6s;
+// 	transform-style: preserve-3d;
+// 	position: relative;
+// 	height:100%;
+// 	width:100%;
+// }
+
+/* hide back of pane during swap */
+// .front, .back {
+// 	backface-visibility: hidden;
+// 	position: absolute;
+// 	top: 0;
+// 	left: 0;
+// 	height:100%;
+// 	width:100%;
+// }
+
+/* front pane, placed above back */
+// .front {
+// 	z-index: 2;
+// 	/* for firefox 31 */
+// 	transform: rotateY(0deg);
+// 	background: #333;
+// 	color:white;
+// }
+
+// /* back, initially hidden pane */
+// .back {
+// 	transform: rotateY(180deg);
+// 	background:#666;
+// 	color:white;
+// }
+
+// .flip-container:hover .flipper, .flip-container.hover .flipper, .flip-container.flip .flipper {
+// 	transform: rotateY(180deg);
+// }
